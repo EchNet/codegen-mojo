@@ -1,0 +1,66 @@
+<%doc>
+
+	Generates the class org.terrane.codegen.samples.ExceptionTemplate.
+
+	ExceptionTemplate generates a Java exception class, with the usual 
+	constructors.
+
+	ExceptionTemplate is invoked as shown:
+
+		new ExceptionTemplate().render(
+			new FileWriter("AnException.java"),
+			"org.terrane.codegen.samples.AnException",
+			"java.lang.Exception"
+		)
+
+</%doc>
+<%import>
+	org.terrane.codegen.typemodel.ClassModel;
+</%import>
+<%args>
+	String exceptionClassName;
+	String baseClassName;
+</%args>
+<%java>
+	ClassModel exceptionClassModel = new ClassModel(exceptionClassName);
+</%java>
+package <% exceptionClassModel.getPackageName() %>;
+
+public class <% exceptionClassModel.getName() %>
+	extends <% baseClassName %>
+{
+    /**
+     * Default constructor.
+     */
+    public <% exceptionClassModel.getName() %>()
+    {
+    }
+
+    /**
+     * Constructor.
+     * @param cause    the root cause
+     */
+    public <% exceptionClassModel.getName() %>(Throwable cause)
+    {
+        super(cause);
+    }
+
+    /**
+     * Constructor.
+     * @param msg     a brief description of the error
+     */
+    public <% exceptionClassModel.getName() %>(String msg)
+    {
+        super(msg);
+    }
+
+    /**
+     * Constructor.
+     * @param msg      a brief description of the error
+     * @param cause    the root cause
+     */
+    public <% exceptionClassModel.getName() %>(String msg, Throwable cause)
+    {
+        super(msg, cause);
+    }
+}

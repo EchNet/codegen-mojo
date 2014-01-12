@@ -1,0 +1,17 @@
+# Generate various exceptions.
+template: "org.terrane.codegen.samples.ExceptionTemplate"
+produces:
+    - output: "ConfigurationException"
+      arguments:
+       - org.terrane.codegen.samples.ConfigurationException
+       - java.lang.RuntimeException
+
+    - output: "ComponentIOException"
+      arguments:
+       - org.terrane.codegen.samples.ComponentIOException
+       - java.io.IOException
+
+    - output: "ComponentStateException"
+      arguments:
+       - org.terrane.codegen.samples.ComponentStateException
+       - java.lang.RuntimeException

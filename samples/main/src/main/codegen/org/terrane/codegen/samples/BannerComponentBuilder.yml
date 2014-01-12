@@ -1,0 +1,6 @@
+# Generate ApplicationException
+template: "org.terrane.codegen.samples.BuilderTemplate"
+arguments:
+   - { $java: org.terrane.codegen.samples.BannerComponent }
+   - BannerComponentBuilder
+   - BannerComponent

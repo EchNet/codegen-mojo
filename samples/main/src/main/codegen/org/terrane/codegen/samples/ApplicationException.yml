@@ -1,0 +1,5 @@
+# Generate ApplicationException
+template: "org.terrane.codegen.samples.ExceptionTemplate"
+arguments:
+   - org.terrane.codegen.samples.ApplicationException
+   - java.lang.Exception
